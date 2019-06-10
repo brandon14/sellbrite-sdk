@@ -6,6 +6,8 @@ language: php
 php:
   - 7.1
   - 7.2
+  - 7.3
+  - 7.4snapshot
 
 sudo: false
 
@@ -14,7 +16,7 @@ before_script:
   - composer install --prefer-source --no-interaction
 
 script:
-  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  - composer validate --no-check-all --strict && composer run-script security:check && composer run-script lint && composer run-script test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t c7e53ca4-fb5c-4547-92fc-3828f0730156
@@ -22,7 +24,6 @@ after_success:
 notifications:
   email:
     recipients:
-      - sastidham@trollandtoad.com
-      - ryans@trollandtoad.com
+      - brclothier@trollandtoad.com
     on_success: always
     on_failure: always

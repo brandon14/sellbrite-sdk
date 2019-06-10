@@ -1,51 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.4/phpunit.xsd"
          backupGlobals="true"
-         backupStaticAttributes="false"
          colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         stopOnFailure="false"
-         verbose="true">
+         verbose="true"
+         stopOnError="true"
+         stopOnFailure="true"
+         stopOnIncomplete="true"
+         stopOnSkipped="true"
+         stopOnRisky="true">
     <testsuites>
-        <testsuite name="Channels API Tests">
-            <directory suffix="Test.php">./tests/Channels</directory>
+        <testsuite name="Sellbrite SDK Unit Tests">
+            <directory>./tests/Unit</directory>
         </testsuite>
-
-        <testsuite name="Inventory API Tests">
-            <directory suffix="Test.php">./tests/Inventory</directory>
-        </testsuite>
-
-        <testsuite name="Orders API Tests">
-            <directory suffix="Test.php">./tests/Orders</directory>
-        </testsuite>
-
-        <testsuite name="Shipments API Tests">
-            <directory suffix="Test.php">./tests/Shipments</directory>
-        </testsuite>
-
-        <testsuite name="Warehouses API Tests">
-            <directory suffix="Test.php">./tests/Warehouses</directory>
-        </testsuite>
-
-        <testsuite name="Products API Tests">
-            <directory suffix="Test.php">./tests/Products</directory>
-        </testsuite>
-
-        <testsuite name="Variation Groups API Tests">
-            <directory suffix="Test.php">./tests/VariationGroups</directory>
+        <testsuite name="Sellbrite SDK Integration Tests">
+            <directory>./tests/Integration</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
-            <exclude>
-                <directory suffix=".php">./src/Interfaces</directory>
-            </exclude>
         </whitelist>
     </filter>
     <logging>
-        <log type="coverage-html" target="tests/coverage" lowUpperBound="35" highLowerBound="85" />
+        <log type="coverage-html" target="./coverage" highLowerBound="85" />
+        <log type="coverage-clover" target="./coverage.xml" />
     </logging>
 </phpunit>

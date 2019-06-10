@@ -1,25 +1,40 @@
-# Ignore project files made by code editors
-.idea
+#
+# This file is part of the trollandtoad/sellbrite package.
+#
+# Copyright (c) 2019 TrollAndToad.com
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+# of the Software, and to permit persons to whom the Software is furnished to do
+# so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+# PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+# CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+# OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+
+# Composer vendor folder.
+/vendor
+# It's a library, so composer.lock should not be committed.
+composer.lock
+
+# PHP Unit code coverage files.
+coverage.xml
+coverage.text
+coverage.html
+coverage/
+
+# PHP Coding Standards Fixer cache file.
+.php_cs.cache
+
+# Editor files.
 .vscode
-.sublime-project
-.sublime-workspace
-
-*.log
-.wakatime-project
-.remote-sync.json
-.editorconfig
-
-# ignore Composer downloads
-/vendor/*
-
-# Ignore environment file
-.env
-
-# keep some hiddens
-!/.gitignore
-
-# ignore bootstrap files
-/bootstrap/*
-
-# ignore code coverage folder
-/tests/coverage/*
+.idea
